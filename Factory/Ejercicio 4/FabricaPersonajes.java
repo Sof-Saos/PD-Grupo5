@@ -1,14 +1,19 @@
 public class FabricaPersonajes {
     public Personaje crearPersonaje(String tipo, String nombre, int nivel) {
+        Habilidad habilidad = null;
         switch (tipo) {
             case "Guerrero":
-                return new Guerrero(nombre, nivel);
+                habilidad = new AtaqueEspada();
+                break;
             case "Mago":
-                return new Mago(nombre, nivel);
+                habilidad = new LanzarHechizo();
+                break;
             case "Arquero":
-                return new Arquero(nombre, nivel);
+                habilidad = new DispararFlecha();
+                break;
             default:
                 throw new IllegalArgumentException("Tipo de personaje no válido: " + tipo);
         }
+        return new Personaje(nombre, nivel, habilidad);
     }
 }
