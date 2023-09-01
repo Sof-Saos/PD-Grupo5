@@ -17,16 +17,24 @@ public class UserRegistry {
 
     public void addUser(User user) {
         userList.add(user);
+        System.out.println("Usuario agregado con exito!");
     }
 
-    public List<User> getUsers() {
+    public ArrayList<User> getUsers() {
+        System.out.println("Lista de usuarios:");
+        for (User user : userList) {
+            System.out.println("Usuario: " + user.getUsername() + ", Email: " + user.getEmail());
+        }
         return userList;
     }
 
     public User getUserByUsername(String username) {
         for (User user : userList) {
             if (user.getUsername().equals(username)) {
+                System.out.println("Usuario encontrado: " + user.getUsername() + ", Email: " + user.getEmail());
                 return user;
+            } else {
+                System.out.println("Usuario no encontrado");
             }
         }
         return null;
