@@ -1,6 +1,4 @@
-    import java.util.ArrayList;
-
-    public class Main {
+public class Main {
         public static void main(String[] args) {
             UserRegistry userRegistry = UserRegistry.getInstance();
 
@@ -12,6 +10,7 @@
             userRegistry.getUsers();
 
             userRegistry.getUserByUsername("Pepe");
+            userRegistry.getUserByUsername("Maria");
             userRegistry.getUserByUsername("Mario");
         }
     }
